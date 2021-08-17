@@ -18,5 +18,12 @@ services:
     ports:
       - "6379:6379"
 
+  redis-cli:
+    depends_on:
+      - redis
+    image: redis
+    network_mode: host
+    command: redis-cli -h 127.0.0.1 ping
+
 
 
